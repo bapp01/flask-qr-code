@@ -65,7 +65,7 @@ def create_qr_code():
 if __name__ == '__main__':
     app.run()
 
-# using waitress 
-# if __name__ == 'main':
+# using waitress | pip install waitress
+# if __name__ == '__main__':
 #     from waitress import serve
 #     serve(app, threads=4)
