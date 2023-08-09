@@ -18,7 +18,7 @@ def is_valid_hex_code(hex_code): # checks if the given hex is valid
     pattern = r'^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$'
     return re.match(pattern, hex_code) is not None
 
-qr_path = os.getcwd() + "\static\\qr\\"
+qr_path = os.path.join(os.getcwd(), "static", "qr/")
 # change to any as you wish
 default_res = 256 # default resolution of qr codes
 max_res = 1080 # max resolution of qr codes
