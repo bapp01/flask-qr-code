@@ -48,7 +48,7 @@ def create_qr_code():
 
     saved_qr_codes = os.listdir(qr_path)
     if Filename in saved_qr_codes: # checks if the parameters where entered before
-        return send_file(qr_path + saved_qr_codes[saved_qr_codes.index(Filename)], mimetype="image/jpg") # returns the same image if the same parameters are entered before
+        return send_file(qr_path + saved_qr_codes[saved_qr_codes.index(Filename)], mimetype="image/jpeg") # returns the same image if the same parameters are entered before
     else:
         # If there the number of qr codes saved equals to the value of the "save_limit" variable it deletes the oldest qr code saved
         saved_qr_codes = os.listdir(qr_path)
@@ -60,7 +60,7 @@ def create_qr_code():
         qr.add_data(data)
         qr.make(fit=True)
         qr.make_image(fill_color=color, back_color=bgcolor).resize((size, size), resample=Image.NEAREST).filter(ImageFilter.SHARPEN).save(qr_path + Filename, quality=95)
-        return send_file(qr_path + Filename, mimetype="image/jpg")
+        return send_file(qr_path + Filename, mimetype="image/jpeg")
 
 if __name__ == '__main__':
     app.run()
